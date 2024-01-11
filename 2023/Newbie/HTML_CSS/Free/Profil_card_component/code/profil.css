@@ -1,0 +1,71 @@
+/* Kumbh Sans 400; 700 */
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: hsl(185, 75%, 39%);
+    background-image: url("../images/bg-pattern-top.svg");
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 18px;
+    margin: 50px 0;
+}
+
+.container {
+    max-width: 375px;
+}
+
+main {
+    background: white; 
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.info {
+    transform: translateY(-20%);
+}
+
+.bgc-image-section {
+    background-image: url("../images/bg-pattern-card.svg");
+    width: 350px;
+    height: 140px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.avatar {
+    border-radius: 50%;
+    border: 5px solid white;
+    bottom: 0; 
+    transform: translateY(-50%); 
+}
+
+.social-info {
+    margin-top: 25px;
+    padding-top: 25px;
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid gainsboro;
+}
+
+.info-people p {
+    transform: translateY(-50%);
+}
+
+
+@media only screen and (min-width: 1440px) {
+    body {
+        background-image: url("../images/bg-pattern-top.svg"), url("../images/bg-pattern-bottom.svg");
+        background-repeat: no-repeat, no-repeat;
+        background-position: right 52vw bottom 35vh, left 48vw top 52vh; 
+    }
+}

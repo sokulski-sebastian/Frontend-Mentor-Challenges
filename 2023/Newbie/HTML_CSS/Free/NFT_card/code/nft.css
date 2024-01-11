@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+* {
+    font-family: 'Outfit', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: hsl(217, 54%, 11%);
+}
+
+.container {
+    max-width: 375px;
+    background: hsl(216, 50%, 16%);
+    border-radius: 15px;
+    overflow: hidden; 
+}
+
+.image-section {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.nft-image {
+    width: 375px;
+    height: 370px;
+    border-radius: 35px;
+    padding: 20px;
+}
+
+.image-section img {
+    transition: opacity 0.3s ease-in-out;
+}
+
+.image-section .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.image-section:hover img {
+    cursor: pointer;
+    opacity: 0.4;
+}
+
+.image-section:hover .icon {
+    opacity: 1;
+}
+
+h1 {
+    color: hsl(0, 0%, 100%);
+    padding: 0 20px;
+    font-size: 1.7em;
+}
+
+h1:hover {
+    cursor: pointer;
+    color: hsl(178, 100%, 50%);
+}
+
+p {
+    font-size: 18px;
+    font-weight: 300;
+    color: hsl(215, 51%, 70%);
+    margin: 20px;
+}
+
+.details {
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid hsl(215, 32%, 27%);
+}
+
+.value {
+    color: hsl(178, 100%, 50%);
+}
+
+.time {
+    font-weight: 300;
+    color: hsl(215, 51%, 70%);
+}
+
+.avatar-container {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+}
+
+.avatar {
+    width: 30px;
+    border: white solid 1px;
+    border-radius: 15px;
+    margin-right: 10px;
+}
+
+.autor {
+    color: hsl(0, 0%, 100%);
+}
+
+.autor span {
+    margin-left: 10px;
+    color: hsl(215, 51%, 70%);
+    font-weight: 300;
+}
+
+.autor b {
+    color: hsl(0, 0%, 100%);
+}
+
+.autor b:hover {
+    cursor: pointer;
+    color: hsl(178, 100%, 50%);
+}

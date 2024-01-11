@@ -1,0 +1,105 @@
+/*Lexend Deca 400*/
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
+/* Big Shoulders Display 700*/
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap');
+
+* {
+    font-family: 'Big Shoulders Display', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: hsl(0, 0%, 95%);
+    font-size: 15px;
+    margin: 40px 0;
+}
+
+.container {
+    max-width: 375px;
+}
+
+.card {
+    width: 300px;
+    padding: 40px;
+    h2, p, button {
+        margin-top: 30px;
+    }
+    h2 {
+        text-transform: uppercase;
+        font-size: 2em;
+        color: white;
+    }
+    p, button {
+        font-family: 'Lexend Deca', sans-serif;
+    }
+    p {
+        color: hsla(0, 0%, 100%, 0.75);
+    }
+    button {
+        width: 150px;
+        height: 50px;
+        background: white;
+        border: none;
+        border-radius: 40px;
+        font-size: 1em;
+        &:hover {
+            cursor: pointer;
+            background: none;
+            border: 2px solid white;
+            color: white;
+        }
+        &:active {
+            transition: transform(0.5s);
+            transform: scale(1.1);
+        }
+    }
+}
+
+.sedans {
+    background: hsl(31, 77%, 52%);
+    border-top-left-radius: 20px;  
+    border-top-right-radius: 20px;
+}
+
+.suvs {
+    background: hsl(184, 100%, 22%);
+}
+
+.luxury {
+    background: hsl(179, 100%, 13%);
+    border-bottom-left-radius: 20px;  
+    border-bottom-right-radius: 20px;
+}
+
+@media only screen and (min-width: 1440px) {
+    .container {
+        max-width: 1440px;
+        display: flex;
+    }
+
+    .card {
+        flex: 1;
+        border-radius: 0;
+    }
+
+    .sedans {
+        border-top-left-radius: 20px;  
+        border-bottom-left-radius: 20px;
+    }
+    
+    .luxury {
+        border-top-right-radius: 20px;  
+        border-bottom-right-radius: 20px;
+    }
+
+    button {
+        margin-top: 80px;
+    }
+}
