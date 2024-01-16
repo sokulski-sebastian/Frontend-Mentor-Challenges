@@ -1,0 +1,261 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+/* Colors */
+$color-active-border-start: #6347ff;
+$color-active-border-end: #600594;
+$color-border-gradient: linear-gradient(to right, $color-active-border-start, $color-active-border-end);
+$color-error: #ff5252;
+$color-white: #ffffff;
+$color-light-gray-purple: #dedddf;
+$color-dark-gray-purple: #8e8593;
+$color-very-dark-purple: #21092f;
+
+/* Theme colors */
+/* Light */
+$color-light-background: $color-white;
+$color-light-background-switch: #cfd9e4;
+$color-light-background-toggle: linear-gradient(180deg, #fab254, #d8890b);
+
+/* Dark */
+$color-dark-background: #555555;
+$color-dark-background-switch: #242422;
+$color-dark-background-toggle: linear-gradient(180deg, #777, #3a3a3a);
+
+$color-unchecked: #7e7e7e;
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Space Grotesk', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    font-size: 1.8rem;
+    font-weight: 500;
+    min-height: 100vh;
+    position: relative; 
+    justify-content: center;
+    align-items: center;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $color-white; 
+        z-index: -2; 
+        transition: .3s ease;
+    }
+    &.dark-theme::before {
+        background: $color-dark-background;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 260px; 
+        background-image: url("../../images/bg-main-mobile.png");
+        background-repeat: no-repeat;
+        background-size: 100% 384px;
+        z-index: -1; 
+    }  
+}
+
+.container {
+    max-width: 375px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.theme {
+    display: flex;
+    justify-content: right;
+    margin-bottom: 10px;
+    .theme-label {
+        width: 55px;
+        height: 25px;
+        position: relative;
+        display: block;
+        background: $color-light-background-switch;
+        border-radius: 200px;
+        box-shadow: inset 0 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
+        cursor: pointer;
+        transition: .5s;
+        &::after {
+            content: "";
+            width: 22.5px;
+            height: 22.5px;
+            position: absolute;
+            top: 1.5px;
+            left: 2px;
+            background: $color-light-background-toggle;
+            border-radius: 50px;
+            box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+            transition: .5s;
+        }
+        &:active::after {
+            width: 35px;
+        }
+        & svg {
+            position: absolute;
+            width: 16px;
+            top: 5px;
+            left: 5px;
+            z-index: 100;
+        }
+        & .sun {
+            fill: $color-white;
+            transition: .5s;
+            & path {
+                fill: $color-white;
+            }
+        }
+        & .moon {
+            left: 35px;
+            transition: .5s;
+            & path {
+                fill: $color-unchecked;
+            }
+        }
+    }
+    
+    .theme-input {
+        width: 0;
+        height: 0;
+        visibility: hidden;
+        &:checked + .theme-label {
+            background: $color-dark-background-switch;
+        }
+        &:checked + .theme-label::after {
+            left: 53.5px;
+            transform: translateX(-100%);
+            background: $color-dark-background-toggle;
+        }
+        &:checked + .theme-label .sun path{
+            fill: $color-unchecked;
+        }
+        &:checked + .theme-label .moon path{
+            fill: $color-white;
+        }
+    }
+}
+
+.card {
+    .back-card {
+        position: relative;
+        display: flex;
+        justify-content: right;
+        flex-wrap: wrap;
+        .img-bg-card {
+            width: 265px;
+        }
+        .cvc {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            color: white;
+            font-size: .7rem;
+            letter-spacing: 0.1em;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 36px;
+        }
+    }
+    .front-card {
+        height: 155px;
+        width: 265px;
+        position: relative;
+        top: -63px;
+        .img-front-card {
+            width: 100%;
+        }
+        .details-card {
+            height: 100%;
+            padding: 20px;
+            position: relative;
+            top: -160px;
+            color: $color-white;
+            letter-spacing: 0.0675rem;
+            .logo-card {
+                display: block;
+                width: 55px;
+            }
+            .number-card {
+                position: relative;
+                bottom: -20px;
+                font-size: 1.13rem;
+                font-weight: 400;
+            }
+            .info-card {
+                margin-top: 35px;
+                text-transform: uppercase;
+                font-size: .45rem;
+                font-weight: 300;
+                opacity: 85%;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+}
+
+
+.form-wrapper:nth-child(2) {
+    position: relative;
+    top: -20px;
+}
+.form-wrapper:nth-child(2) {
+    position: relative;
+    top: -20px;
+}
+
+
+
+.form-card {
+    padding: 10px;
+    .form-label {
+        position: relative;
+        top: 10px;
+        text-transform: uppercase;
+        font-size: .6rem;
+        font-weight: 600;
+    }
+}
+
+.form-input {
+    width: 100%;
+    height: 30px;
+    padding-left: 10px;
+    font-size: .8rem;
+    font-weight: 700;
+    border: 1px solid $color-light-gray-purple; 
+    border-radius: 7px;
+    &::placeholder {
+        color: $color-light-gray-purple;
+        opacity: 95%;
+        font-weight: 500;
+    }
+    &:active, &:focus {
+        border-image: $color-border-gradient;
+        border-image-slice: 1; 
+        border-image-width: 1px; 
+        outline: none;
+    }
+}
+
+.error-info, .error-info2 {
+    position: relative;
+    top: -10px;
+    color: $color-error;
+    font-size: .6rem;
+}
+
