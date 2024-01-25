@@ -359,9 +359,10 @@ form {
 }
 
 .complete {
-    margin-top: 40px;
     padding: 0 15px;
     text-align: center;
+    position: relative;
+    top: -20px;
     display: none;
     & img {
         margin: 0 auto;
@@ -499,5 +500,16 @@ form {
         margin-top: 50px;
         height: 60px;
         top: -40px;
+    }
+
+    .complete {
+        top: -50px;
+        & p {
+            font-size: 1.1rem;
+            margin-bottom: 80px;
+        }
+        & button {
+            width: 450px;
+        }
     }
 }

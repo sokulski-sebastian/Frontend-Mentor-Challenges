@@ -340,9 +340,10 @@ form {
 }
 
 .complete {
-  margin-top: 40px;
   padding: 0 15px;
   text-align: center;
+  position: relative;
+  top: -20px;
   display: none;
 }
 .complete img {
@@ -458,5 +459,15 @@ form {
     margin-top: 50px;
     height: 60px;
     top: -40px;
+  }
+  .complete {
+    top: -50px;
+  }
+  .complete p {
+    font-size: 1.1rem;
+    margin-bottom: 80px;
+  }
+  .complete button {
+    width: 450px;
   }
 }/*# sourceMappingURL=style.css.map */
